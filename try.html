@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>A rock papers scissors game!</title>
+		<link rel="stylesheet" href="try.css">
+		<script src="try.js"></script>
+	</head>
+	<body onload="startUp()">
+		<header>
+			<h1>Rock, Papers Scissors</h1>
+		</header>
+		<h4>Please choose a choice</h4>
+		<input type="radio" id="rock" name="choice">      <label for="rock">Rock</label>
+		<input type="radio" id="papers" name="choice">	  <label for="papers">Papers</label>
+		<input type="radio" id="scissors" name="choice">  <label for="Scissors">Scissors</label>
+		
+		<br><input type="Button" value="Let's play!" class="butto" onclick="letssee()">
+		
+		<h3 id="result">Select an option to play!</h3>
+
+		<table>
+			<tr>
+				<th class="win">Wins</th>
+				<th class="tie">Ties</th>
+				<th class="lose">Loses</th>
+			</tr>
+			<tr>
+				<td id="wins"></td>
+				<td id="ties"></td>
+				<td id="loses"></td>
+			</tr>
+		</table>
+		<input type="button" class="butto" value="Reset" onclick="reset()">
+	</body>
+</html>

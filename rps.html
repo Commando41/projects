@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>A rock papers scissors game!</title>
+		<script>
+			var wins = 0;
+			var ties = 0;
+			var loses = 0;
+			function letssee(){
+				var choice = ["Rock", "Paper", "Scissors"];
+				var x = Math.floor(Math.random() * 3);
+				var ob = document.getElementById("result");
+				var player;
+				if(document.getElementById("rock").checked == true){
+					player = 0;
+				}else if(document.getElementById("papers").checked == true){
+					player = 1;
+				}else{
+					player = 2;
+				}
+				var out;
+				if((x + 1) % 3 == player){
+					out = "You WIN";
+					ob.style.color = "green";
+					wins++;
+				}else if(x == player){
+					out = "It's a TIE"
+					ob.style.color = "blue";
+					ties++;
+				}else{
+					out = "You LOSE";
+					ob.style.color = "red";
+					loses++;
+				}
+				ob.innerHTML = "You chose " + choice[player] + ", AI chose " + choice[x] + "! " + out + "!";
+				document.getElementById("wins").innerHTML = wins;
+				document.getElementById("ties").innerHTML = ties;
+				document.getElementById("loses").innerHTML = loses;
+			}
+		</script>
+		<style>
+			table{
+				margin-left: auto;
+				margin-right: auto;
+			}
+			header {
+				padding-bottom: 0.1px;
+			}
+		</style>
+	</head>
+
+	<body style="text-align:center;">
+		<header style="background-color: red;">
+			<h1 style="color: white;">Rock, Papers Scissors</h1>
+		</header>
+		<p>Please select an option</p>
+
+		<input type="radio" id="rock" name="choice"><label for="rock">Rock </label>
+		<input type="radio" id="papers" name="choice"><label for="paper">Paper </label>
+		<input type="radio" id="scissors" name="choice" checked><label for="scissors">Scissors</label>
+
+		<br><input type="Button" value="Let's play!" style="margin-top:30px;" onclick="letssee()">
+		
+		<h3 id="result">Select an option to play!</h3>
+
+		<table style="width:20%;">
+			<tr>
+				<th style="color:green;">Wins</th>
+				<th style="color:blue;">Ties</th>
+				<th style="color:red;">Loses</th>
+			</tr>
+			<tr>
+				<td id="wins">0</td>
+				<td id="ties">0</td>
+				<td id="loses">0</td>
+			</tr>
+		</table>
+	</body>
+</html>
